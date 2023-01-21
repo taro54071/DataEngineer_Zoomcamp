@@ -18,8 +18,6 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=root
     ports:
       - "8080:80"
-    # initial commit ig
-    # commit to work_in_progress
-    # this is my next commit
-    # new feature is here
-    # next push is coming
+
+  #Standard connections string
+  #DATABASE_URL=postgres://{user}:{password}@{hostname}:{port}/{database-name}
