@@ -1,3 +1,6 @@
+# this section is like importing the function so we can define the predefined
+# function in the next block
+# project ID = dtc-de-360009
 terraform {
   required_version = ">= 1.0"
   backend "local" {}  # Can change from "local" to "gcs" (for google) or "s3" (for aws), if you would like to preserve your tf-state online
@@ -8,6 +11,7 @@ terraform {
   }
 }
 
+# we implement the predefined function
 provider "google" {
   project = var.project
   region = var.region

@@ -4,11 +4,15 @@ locals {
 
 variable "project" {
   description = "Your GCP Project ID"
+  # default = "It's the project ID that we parsed when we use `terraform plan`"
+  # If we do not set the default value the CLI will ask us
+  # We do not set default value because it will cause an error when working in shared resources
 }
 
 variable "region" {
   description = "Region for GCP resources. Choose as per your location: https://cloud.google.com/about/locations"
-  default = "europe-west6"
+  # default = "europe-west6"
+  default = "asia-southeast1"
   type = string
 }
 
