@@ -5,6 +5,8 @@ locals {
 variable "project" {
   description = "Your GCP Project ID"
   # default = "It's the project ID that we parsed when we use `terraform plan`"
+  # default = "dtc-de-360009"
+  # type = string
   # If we do not set the default value the CLI will ask us
   # We do not set default value because it will cause an error when working in shared resources
 }
