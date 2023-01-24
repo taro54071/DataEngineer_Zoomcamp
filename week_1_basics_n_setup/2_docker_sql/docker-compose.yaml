@@ -6,6 +6,8 @@ services:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=ny_taxi
+    networks:
+      - pg-network
     volumes:
       - "./ny_taxi_postgres_data:/var/lib/postgresql/data:rw"
     ports:
@@ -16,9 +18,16 @@ services:
     environment:
       - PGADMIN_DEFAULT_EMAIL=admin@admin.com
       - PGADMIN_DEFAULT_PASSWORD=root
+    networks:
+      - pg-network
     ports:
       - "8080:80"
 
+# we can customize network by naming the network or not
+# ref: https://medium.com/@matayoshi.mariano/communication-between-multiple-docker-compose-projects-d79a68af3348
+networks:
+  pg-network:
+    name: pg-pgadmin4
   #Standard connections string
   #DATABASE_URL=postgres://{user}:{password}@{hostname}:{port}/{database-name}
   # next push
